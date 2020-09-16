@@ -1,0 +1,14 @@
+.row-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  min-width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions > span {
+  cursor: pointer;
+}

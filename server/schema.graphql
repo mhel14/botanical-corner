@@ -1,0 +1,27 @@
+type Fruit {
+  id: ID!
+  name: String!
+}
+
+type Vegetable {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  fruit(id: ID!): Fruit
+  fruits: [Fruit]
+  vegetable(id: ID!): Vegetable
+  vegetables: [Vegetable]
+}
+
+type Mutation {
+  # Fruits
+  addFruit(name: String!): Fruit
+  updateFruit(id: ID!, name: String!): Fruit
+  deleteFruit(id: ID!): [Fruit]
+  # Vegetables
+  addVegetable(name: String!): Vegetable
+  updateVegetable(id: ID!, name: String!): Vegetable
+  deleteVegetable(id: ID!): [Vegetable]
+}

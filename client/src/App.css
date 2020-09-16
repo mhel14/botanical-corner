@@ -1,0 +1,58 @@
+html {
+  background-color: #eef1f0;
+}
+
+.mainSection {
+  max-width: 500px;
+  margin: auto;
+}
+
+.navbar {
+  max-width: 90%;
+  margin: 30px auto 0;
+  background-color: transparent;
+}
+
+.navbar-end {
+  margin-top: 16px;
+  /* margin-right: 24px; */
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.fruits-wrapper, .vegetables-wrapper, .login-wrapper {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.login-wrapper .label {
+  text-align: left;
+}
+
+.button {
+  margin-top: 24px;
+}
+
+.modalHeading {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.help {
+  font-size: 15px;
+}
+
+.ReactModal__Content {
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin-right: -50% !important;
+  transform: translate(-50%, -50%) !important;
+  text-align: center !important;
+  min-width: 400px !important;
+}
