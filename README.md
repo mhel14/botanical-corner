@@ -30,3 +30,12 @@ query {
   updateVegetable(id: ID!, name: String!): Vegetable
   deleteVegetable(id: ID!): [Vegetable]
 ```
+
+## Client
+- Login credentials Username/Password:
+````
+admin/admin
+john/john
+marry/marry
+````
+
