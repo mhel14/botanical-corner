@@ -46,7 +46,7 @@ const Query = {
 			throw new AuthenticationError('Invalid credentials');
 		}
 		const token = jwt.sign({ userId: user.id, username: user.username, role: user.role }, SECRET_KEY, {
-			expiresIn: '1min'
+			expiresIn: '5min'
 		});
 
 		res.cookie('access-token', token);
