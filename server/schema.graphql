@@ -8,11 +8,18 @@ type Vegetable {
   name: String!
 }
 
+type AuthData {
+  userId: String!
+  token: String!
+  role: String
+}
+
 type Query {
   fruit(id: ID!): Fruit
   fruits: [Fruit]
   vegetable(id: ID!): Vegetable
   vegetables: [Vegetable]
+  login(username: String!, password: String!): AuthData
 }
 
 type Mutation {

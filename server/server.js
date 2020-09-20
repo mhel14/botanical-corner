@@ -6,10 +6,16 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const expressJwt = require('express-jwt');
 const jwt = require('jsonwebtoken');
 const db = require('./db');
+const resolvers = require('./resolvers');
+const cookieParser = require('cookie-parser');
+const isAuth = require('./middleware/isAuth');
 
 const app = express();
+app.use(cookieParser());
 const jwtSecret = Buffer.from('Zn4Q5tyZ/G1MHlsc4F/gTrVJMlrbKiZt', 'base64');
 const PORT = 5000;
+
+app.use(isAuth)
 
 app.use(cors(), bodyParser.json(), expressJwt({
   secret: jwtSecret,
@@ -18,9 +24,8 @@ app.use(cors(), bodyParser.json(), expressJwt({
 }));
 
 const typeDefs = gql(fs.readFileSync('./schema.graphql', {encoding: 'utf8'}));
-const resolvers = require('./resolvers');
 
-const apolloServer = new ApolloServer({ typeDefs, resolvers });
+const apolloServer = new ApolloServer({ typeDefs, resolvers, context: ({req, res}) => ({req, res}) });
 apolloServer.applyMiddleware({app, path: '/graphql'});
 
 app.post('/login', (req, res) => {
