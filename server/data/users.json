@@ -9,12 +9,14 @@
     "id": "BJiUUSAED",
     "username": "john",
     "password": "john",
-    "role": "FruitJohn"
+    "role": "FruitJohn",
+    "scope": "FRUITS"
   },
   {
     "id": "B138IBC4v",
     "username": "marry",
     "password": "marry",
-    "role": "VegetarianMary"
+    "role": "VegetarianMary",
+    "scope": "VEGETABLES"
   }
 ]

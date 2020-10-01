@@ -36,7 +36,7 @@ app.post('/login', (req, res) => {
     return;
   }
   const token = jwt.sign({sub: user.id}, jwtSecret);
-  res.send({token, role: user.role});
+  res.send({token, role: user.role, scope: user.scope});
 });
 
 app.listen(PORT, () => {

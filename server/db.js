@@ -2,7 +2,7 @@ const { DataStore } = require('notarealdb');
 const store = new DataStore('./data');
 
 module.exports = {
-  fruits: store.collection('fruits'),
-  vegetables: store.collection('vegetables'),
+  FRUITS: store.collection('fruits'),
+  VEGETABLES: store.collection('vegetables'),
   users: store.collection('users')
 }

@@ -1,11 +1,12 @@
-type Fruit {
-  id: ID!
-  name: String!
+enum Category {
+  FRUITS
+  VEGETABLES
 }
 
-type Vegetable {
+type Item {
   id: ID!
   name: String!
+  category: Category!
 }
 
 type AuthData {
@@ -15,20 +16,13 @@ type AuthData {
 }
 
 type Query {
-  fruit(id: ID!): Fruit
-  fruits: [Fruit]
-  vegetable(id: ID!): Vegetable
-  vegetables: [Vegetable]
+  item(id: ID!, category: Category!): Item
+  listItems(category: Category!): [Item]
   login(username: String!, password: String!): AuthData
 }
 
 type Mutation {
-  # Fruits
-  addFruit(name: String!): Fruit
-  updateFruit(id: ID!, name: String!): Fruit
-  deleteFruit(id: ID!): [Fruit]
-  # Vegetables
-  addVegetable(name: String!): Vegetable
-  updateVegetable(id: ID!, name: String!): Vegetable
-  deleteVegetable(id: ID!): [Vegetable]
+  addItem(name: String!, category: Category!): Item
+  updateItem(id: ID!, name: String!, category: Category!): Item
+  deleteItem(id: ID!, category: Category!): [Item]
 }
